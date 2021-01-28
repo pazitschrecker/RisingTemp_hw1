@@ -30,7 +30,7 @@ def tempDiff(curr, past):
     return (r, g, b, 0)
 
 def getCurrTemp():
-    resp = requests.get("http://api.openweathermap.org/data/2.5/weather?id=5110302&appid=ed51c9533b4461ef1196a45c38b91850")
+    resp = requests.get("http://api.openweathermap.org/data/2.5/weather?id={API_key}")
     currWeather = resp.json()
     temp = currWeather['main']['temp']
     return (temp - 273.15)*(9/5) + 32
@@ -39,7 +39,7 @@ def getPastTemp(day, hour):
     nextDay = day + timedelta(days=1)
     day = day.strftime("%Y-%m-%d")
     nextDay = nextDay.strftime("%Y-%m-%d")
-    resp = requests.get("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/history?aggregateHours=1&combinationMethod=aggregate&startDateTime="+day+"T00%3A00%3A00&endDateTime="+nextDay+"T00%3A00%3A00&maxStations=-1&maxDistance=-1&contentType=json&unitGroup=us&locationMode=single&key=TFV5ABXYQ5Y78MHBZUVDAQRLW&dataElements=default&locations=Brooklyn%2C%20NY")
+    resp = requests.get("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/history?aggregateHours=1&combinationMethod=aggregate&startDateTime="+day+"T00%3A00%3A00&endDateTime="+nextDay+"T00%3A00%3A00&maxStations=-1&maxDistance=-1&contentType=json&unitGroup=us&locationMode=single&key={KEY}&dataElements=default&locations=Brooklyn%2C%20NY")
     pastData = resp.json()
     return pastData['location']['values'][hour]['temp']
 
