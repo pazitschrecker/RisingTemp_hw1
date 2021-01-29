@@ -13,21 +13,19 @@ pixels = neopixel.NeoPixel(
 )
 
 def tempDiff(curr, past):
-    r = g = b = 0
-    if abs(curr - past) < 1:
-        r = 170
-        g = 255
-        b = 170
-    elif curr > past:
-        r = 255
-        g = 170
-        b = 170
-    else:
-        r = 170
-        g = 170
-        b = 255
 
-    return (r, g, b)
+    if curr == past:
+        pixels.fill((255,255,255))
+        print("same temp")
+    elif curr > past:
+        pixels.fill((0,255,0))
+        print("hotter now")
+    else:
+        pixels.fill((0,0,255))
+        print("colder now")
+    
+    pixels.show()
+
 
 def getCurrTemp():
     resp = requests.get("http://api.openweathermap.org/data/2.5/weather?id=5110302&appid=ed51c9533b4461ef1196a45c38b91850")
@@ -48,6 +46,7 @@ def getPastTemp(day, hour):
 while True:
     
     try:
+        #time.sleep(20)
         
         yearAgo = datetime.now()
         yearAgo = yearAgo.replace(year=yearAgo.year-1)
@@ -56,20 +55,11 @@ while True:
         hours = int(currTime[0])
         minutes = int(currTime[1])
 
-        curr = getCurrTemp()
-        past = getPastTemp(yearAgo, hours)
-        
-        print(curr)
-        print(past)
-
-        colors = tempDiff(curr, past)
-        print(colors)
-        pixels.fill((0,0,0))
-
-        pixels.fill((colors))
-
-        pixels.show()
-
+        #curr = getCurrTemp()
+        #past = getPastTemp(yearAgo, hours)
+        curr = 10
+        past = 80
+        tempDiff(curr, past)
 
         if (minutes != 0):
             print("waiting until hour")
