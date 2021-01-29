@@ -1,6 +1,6 @@
 # Creative Embedded Systems: Module 1 (Generative Art)
 
-This project contains a processing script and a python script and is meant to be run on a Raspberry Pi with an LED ring module connected.
+This project contains a processing script and a python script and is meant to be run on a Raspberry Pi with an LED ring module connected. The generated art is meant to mimic ice melting as water levels rise, both of which relate to global warming. A video of the generative art can be viewed on YouTube: https://www.youtube.com/watch?v=bYVhDSd7Jqo&feature=youtu.be
 
 # Dependencies
 This project requires Processing to run. You can download this by copying and pasting the following command into the terminal:
