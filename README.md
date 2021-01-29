@@ -4,7 +4,9 @@ This project contains a processing script and a python script and is meant to be
 
 # Dependencies
 This project requires Processing to run. You can download this by copying and pasting the following command into the terminal:
+
 `curl https://processing.org/download/install-arm.sh | sudo sh`
+
 More information about running Processing on Pi can be found here: https://pi.processing.org/download/
 
 This project also makes calls to two web apis and uses the Python 'requests' module to do this. Before starting the Python script, run:
