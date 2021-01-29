@@ -46,7 +46,7 @@ def getPastTemp(day, hour):
 while True:
     
     try:
-        #time.sleep(20)
+        time.sleep(20)
         
         yearAgo = datetime.now()
         yearAgo = yearAgo.replace(year=yearAgo.year-1)
@@ -55,10 +55,9 @@ while True:
         hours = int(currTime[0])
         minutes = int(currTime[1])
 
-        #curr = getCurrTemp()
-        #past = getPastTemp(yearAgo, hours)
-        curr = 10
-        past = 80
+        curr = getCurrTemp()
+        past = getPastTemp(yearAgo, hours)
+
         tempDiff(curr, past)
 
         if (minutes != 0):
