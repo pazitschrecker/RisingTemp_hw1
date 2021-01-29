@@ -13,13 +13,13 @@ int maxTide = rand.nextInt(500) + 300;
 int seaLevel = 0; //rand.nextInt(100) + 100;
 int meltedIce = 0;
 
-int numDrops = 4;
+int numDrops = 8;
 Droplet[] droplets = new Droplet[numDrops];
 
 float yoff = 0.0;
 
 void setup() {
-  size(640, 360);
+  size(1280, 720);
   background(184, 243, 255);
   for (int i = 0; i < numDrops; i++) {
     droplets[i] = new Droplet(random(width), random(-100,100), random(10, 40), i);
@@ -39,7 +39,7 @@ void draw() {
   // Iterate over horizontal pixels
   for (float x = 0; x <= width; x += 10) {
     // Calculate a y value according to noise, map to 
-     float y = map(noise(xoff_ice), 0, 1, 0,300 - meltedIce);    // Option #2: 1D Noise
+     float y = map(noise(xoff_ice), 0, 1, 0,700 - meltedIce);    // Option #2: 1D Noise
     
     // Set the vertex
     ice.vertex(x, y); 
@@ -63,7 +63,7 @@ void draw() {
   // Iterate over horizontal pixels
   for (float x = 0; x <= width; x += 10) {
     // Calculate a y value according to noise, map to 
-    if (250-seaLevel <= 0) {
+    if (690-seaLevel <= 0) {
        System.out.println("reached");
        seaLevel = 0;
        meltedIce = 0;
@@ -73,7 +73,7 @@ void draw() {
     }
     // icicles fall away here, fill up screen quickly --> restart
     
-    float y = map(noise(xoff, yoff), 0, 1, 250-seaLevel,350-seaLevel); // Option #1: 2D Noise
+    float y = map(noise(xoff, yoff), 0, 1, 600-seaLevel,700-seaLevel); // Option #1: 2D Noise
     
     // Set the vertex
     water.vertex(x, y); 
