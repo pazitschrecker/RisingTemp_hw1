@@ -13,6 +13,12 @@ This project also makes calls to two web apis and uses the Python 'requests' mod
 
 `pip install requests`
 
+# APIs
+This project uses two web APIs. The API keys are included in the source code in this repo. If you would like to generate your own API keys you may do so by signing up for a free accounts at the following two sites.  
+Open Weather Map: https://openweathermap.org/api Once you have made a free account, replace the key after id=... with your key in the API call in line 31 of rpi_hw1.py 
+
+Visual Crossing: https://www.visualcrossing.com/weather-api Once you have made a free account, replace the key after key=... with your key in the API call in line 40 of rpi_hw1.py 
+
 # Running on boot
 Both the processing script and a python script that controls the LED module run on boot.
 To run the python script on boot, first type into the command line:
