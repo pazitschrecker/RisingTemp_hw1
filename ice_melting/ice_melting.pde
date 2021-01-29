@@ -64,7 +64,6 @@ void draw() {
   for (float x = 0; x <= width; x += 10) {
     // Calculate a y value according to noise, map to 
     if (690-seaLevel <= 0) {
-       System.out.println("reached");
        seaLevel = 0;
        meltedIce = 0;
        
