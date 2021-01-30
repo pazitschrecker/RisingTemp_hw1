@@ -27,7 +27,7 @@ To run the python script on boot, first type into the command line:
 
 Once you are within rc.local, add the following to the bottom of the file (before exit 0):
 
-`sudo python3 /home/pi/rpi_hw.py`
+`sudo python3 /home/pi/rpi_hw1.py`
 
 To set up the processing script to run on boot, first access the autostart file. On Raspbian 10 this can be found by typing the following into the command line:
 
