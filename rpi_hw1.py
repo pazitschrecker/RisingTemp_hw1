@@ -28,7 +28,7 @@ def tempDiff(curr, past):
 
 
 def getCurrTemp():
-    resp = requests.get("http://api.openweathermap.org/data/2.5/weather?id=5110302&appid=ed51c9533b4461ef1196a45c38b91850")
+    resp = requests.get("http://api.openweathermap.org/data/2.5/weather?id=5110302&appid=[YOUR_API_ID_HERE]")
     currWeather = resp.json()
     temp = currWeather['main']['temp']
     return (temp - 273.15)*(9/5) + 32
